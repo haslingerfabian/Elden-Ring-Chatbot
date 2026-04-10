@@ -1,0 +1,89 @@
+# =========================
+
+# OS / Editor
+
+# =========================
+
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# =========================
+
+# Node / React / Vite
+
+# =========================
+
+node_modules/
+dist/
+build/
+.vite/
+.cache/
+*.local
+.env
+.env.*
+!.env.example
+
+# logs
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# =========================
+
+# Python / FastAPI backend
+
+# =========================
+
+**pycache**/
+*.pyc
+*.pyo
+*.pyd
+*.pytest_cache/
+.venv/
+venv/
+env/
+ENV/
+
+# =========================
+
+# uploads / runtime files
+
+# =========================
+
+*.log
+*.tmp
+*.temp
+
+# =========================
+
+# build artifacts
+
+# =========================
+
+coverage/
+htmlcov/
+
+# =========================
+
+# secrets
+
+# =========================
+
+.env.local
+.env.production
+
+# =========================
+
+# misc
+
+# =========================
+
+*.zip
+*.tar
+*.gz
