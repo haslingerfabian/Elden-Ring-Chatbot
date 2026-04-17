@@ -30,7 +30,7 @@ function ChatLayout() {
     setInput("");
     setIsLoading(true);
 
-    const answer = await sendChatMessage(trimmed, nextMessages);
+    const answer = await sendChatMessage(trimmed);
 
     const botMessage: Message = {
       id: crypto.randomUUID(),
@@ -56,7 +56,7 @@ function ChatLayout() {
         <SlideshowCard data={locations} align="right" />
 
         <div className="chat-core">
-          <ChatWindow messages={messages} />
+          <ChatWindow messages={messages} isLoading={isLoading} />
           <ChatInput
             value={input}
             onChange={setInput}

@@ -4,18 +4,20 @@ import ChatMessage from "./ChatMessage";
 
 type ChatWindowProps = {
   messages: Message[];
+  isLoading: boolean;
 };
 
-function ChatWindow({ messages }: ChatWindowProps) {
+function ChatWindow({ messages, isLoading }: ChatWindowProps) {
   const bodyRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     if (!bodyRef.current) return;
+
     bodyRef.current.scrollTo({
       top: bodyRef.current.scrollHeight,
       behavior: "smooth",
     });
-  }, [messages]);
+  }, [messages, isLoading]);
 
   return (
     <section className="chat-window">
@@ -34,6 +36,19 @@ function ChatWindow({ messages }: ChatWindowProps) {
         {messages.map((message) => (
           <ChatMessage key={message.id} message={message} />
         ))}
+
+        {isLoading && (
+          <div className="message-row bot">
+            <div className="message-bubble bot typing-bubble">
+              <div className="message-label">Chatbot</div>
+              <div className="typing-dots">
+                <span />
+                <span />
+                <span />
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
